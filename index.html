@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra Global | Premium Basmati Rice Exporter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the website */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA; /* Off-white background */
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-charcoal {
+            background-color: #212529; /* Deep charcoal */
+        }
+        .text-gold {
+            color: #D4AF37; /* Sophisticated gold */
+        }
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #D4AF37;
+            transition: width 0.3s;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .cta-btn {
+            transition: all 0.3s ease;
+        }
+        .product-card, .quality-step, .leader-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover, .quality-step:hover, .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Page transition styles */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* New Hero Animation Styles */
+        .hero-text-animate {
+            animation: slideInFromLeft 1s ease-out forwards;
+        }
+        .hero-image-animate {
+            animation: slideInFromRight 1s ease-out forwards;
+        }
+
+        @keyframes slideInFromLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInFromRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- SVG Logo -->
+                <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="28" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#212529">Myra Global</text>
+                  <!-- <text x="75" y="28" font-family="'Inter', sans-serif" font-size="24" font-weight="600" fill="#D4AF37">Global</text> -->
+                  <line x1="0" y1="35" x2="135" y2="35" stroke="#D4AF37" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link active" onclick="showPage('home', this)">Home</a>
+                <a href="#about" class="nav-link" onclick="showPage('about', this)">About Us</a>
+                <a href="#products" class="nav-link" onclick="showPage('products', this)">Our Products</a>
+                <a href="#quality" class="nav-link" onclick="showPage('quality', this)">Quality Assurance</a>
+                <a href="#contact" class="nav-link" onclick="showPage('contact', this)">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-200" onclick="showPage('home', this); toggleMenu();">Home</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200" onclick="showPage('about', this); toggleMenu();">About Us</a>
+            <a href="#products" class="block py-2 px-4 text-sm hover:bg-gray-200" onclick="showPage('products', this); toggleMenu();">Our Products</a>
+            <a href="#quality" class="block py-2 px-4 text-sm hover:bg-gray-200" onclick="showPage('quality', this); toggleMenu();">Quality Assurance</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200" onclick="showPage('contact', this); toggleMenu();">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Homepage Section -->
+        <section id="home" class="page active">
+            <!-- New Hero Section -->
+            <div class="bg-white">
+                <div class="container mx-auto px-6 py-16 lg:py-24">
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <!-- Left Column: Text Content -->
+                        <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 hero-text-animate">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-charcoal font-serif">The Essence of India, <span class="text-gold">Delivered Worldwide.</span></h1>
+                            <p class="text-lg md:text-xl mb-8 text-gray-600">Specializing in the export of authentic, long-grain Indian Basmati rice of the highest quality.</p>
+                            <div class="space-y-4 sm:space-y-0 sm:space-x-4">
+                                <button onclick="showPage('products')" class="cta-btn bg-gold text-charcoal font-bold py-3 px-8 rounded-full hover:bg-yellow-500 w-full sm:w-auto">Explore Varieties</button>
+                                <button onclick="showPage('contact')" class="cta-btn bg-charcoal text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 w-full sm:w-auto">Get a Quote</button>
+                            </div>
+                        </div>
+                        <!-- Right Column: Image -->
+                        <div class="lg:w-1/2 flex justify-center lg:justify-end hero-image-animate">
+                            <div class="w-4/5 lg:w-full h-auto rounded-lg shadow-2xl overflow-hidden">
+                                <img src="https://placehold.co/800x900/EDEAE0/333333?text=Premium+Basmati+Rice" class="w-full h-full object-cover" alt="Premium Basmati Rice">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Introduction -->
+            <div class="py-16 bg-gray-50">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-bold mb-4">Exporting Nature's Finest Basmati Rice</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">Rooted in Delhi, the heart of India, Myra Global is a premier export house dedicated to sharing the world's most cherished grain. We connect international buyers with the authentic taste and aroma of premium Indian Basmati rice, ensuring every shipment reflects our commitment to excellence.</p>
+                </div>
+            </div>
+            
+            <!-- Featured Rice Varieties -->
+            <div class="py-16">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12">Featured Rice Varieties</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Product Card 1 -->
+                        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/EDEAE0/333333?text=1121+Golden+Sella" alt="1121 Golden Sella Basmati Rice" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">1121 Golden Sella Basmati</h3>
+                                <p class="text-gray-600">Renowned for its extra-long grains and golden hue, this parboiled rice offers a firm texture and exquisite aroma, perfect for biryanis and pilafs.</p>
+                            </div>
+                        </div>
+                        <!-- Product Card 2 -->
+                        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/F5F5F5/333333?text=Pusa+Steam" alt="Pusa Steam Basmati Rice" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Pusa Steam Basmati</h3>
+                                <p class="text-gray-600">A delightful variety that elongates beautifully upon cooking. Its fluffy, non-sticky texture makes it an ideal choice for everyday fine dining.</p>
+                            </div>
+                        </div>
+                        <!-- Product Card 3 -->
+                        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/FEFEFE/333333?text=Traditional+Raw" alt="Traditional Raw Basmati Rice" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Traditional Raw Basmati</h3>
+                                <p class="text-gray-600">The timeless classic. Experience the authentic, rich aroma and delicate flavor that has made Basmati rice a global treasure for centuries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Promise Section -->
+            <div class="py-16 bg-charcoal text-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gold">Our Promise</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                        <div class="p-4">
+                            <div class="flex justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Admirable Quality</h3>
+                            <p class="text-gray-300">Sourced from the most fertile fields of India's Basmati-growing regions.</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Global Partnership</h3>
+                            <p class="text-gray-300">Reliable and seamless exports to the Gulf and across the world.</p>
+                        </div>
+                        <div class="p-4">
+                             <div class="flex justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Unwavering Consistency</h3>
+                            <p class="text-gray-300">Rigorous quality checks for perfect grain elongation, aroma, and purity.</p>
+                        </div>
+                        <div class="p-4">
+                             <div class="flex justify-center mb-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Ethical Sourcing</h3>
+                            <p class="text-gray-300">A commitment to fair practices and sustainable agriculture partnerships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Page -->
+        <section id="about" class="page py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold text-center mb-12">The Heart of Indian Basmati</h1>
+                
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold text-gold mb-4">Our Story</h2>
+                        <p class="text-gray-600 leading-relaxed">Myra Global was born from a passion for India's rich culinary heritage. The name "Myra," meaning admirable and wonderful, was chosen to reflect our core philosophy: to export Basmati rice of a quality so admirable that it creates wonderful dining experiences globally. We build lasting relationships with our partners, grounded in trust and a shared appreciation for this extraordinary grain.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/EAE5D8/333333?text=Fertile+Paddy+Fields" alt="Paddy Fields" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+
+                <div class="bg-charcoal text-white rounded-lg p-10 mb-20">
+                    <div class="flex flex-col md:flex-row justify-around gap-8">
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h3 class="text-2xl font-bold text-gold mb-3">Our Mission</h3>
+                            <p class="text-gray-300">To be a leading and trusted global supplier of premium Indian rice, celebrated for our quality, reliability, and commitment to customer satisfaction.</p>
+                        </div>
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h3 class="text-2xl font-bold text-gold mb-3">Our Vision</h3>
+                            <p class="text-gray-300">To bring the authentic taste and fragrance of India's finest Basmati rice to every corner of the world, enriching palates and fostering culinary connections.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl font-bold mb-8">Leadership</h2>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <!-- Leader Card -->
+                        <div class="leader-card text-center w-64">
+                             <img src="https://placehold.co/200x200/CCCCCC/FFFFFF?text=Founder+Photo" alt="Founder" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-gold">
+                            <h4 class="text-xl font-semibold">Founder's Name</h4>
+                            <p class="text-gray-500">Founder & CEO</p>
+                        </div>
+                         <!-- Leader Card -->
+                        <div class="leader-card text-center w-64">
+                             <img src="https://placehold.co/200x200/CCCCCC/FFFFFF?text=Export+Head+Photo" alt="Head of Exports" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg border-4 border-gold">
+                            <h4 class="text-xl font-semibold">Manager's Name</h4>
+                            <p class="text-gray-500">Head of Exports</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-center mb-8">Our Global Reach</h2>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">We proudly export to a growing network of partners in the Gulf, Europe, and beyond. This map represents our key export regions.</p>
+                    <div class="bg-gray-200 p-4 rounded-lg shadow-inner">
+                        <img src="https://placehold.co/1200x600/DDE2E8/555555?text=World+Map+Highlighting+Export+Regions" alt="Global Reach Map" class="w-full h-auto rounded">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="products" class="page py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold text-center mb-4 font-serif">The Myra Global Rice Collection</h1>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Discover our curated selection of premium Basmati rice, each variety processed to perfection to meet the highest international standards.</p>
+
+                <!-- Product Listing -->
+                <div class="space-y-16">
+                    <!-- Product 1 -->
+                    <div class="product-item bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/3">
+                            <img src="https://placehold.co/400x400/EDEAE0/333333?text=1121+Golden+Sella+in+Packaging" alt="1121 Golden Sella Basmati Rice" class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-3">1121 Golden Sella Basmati</h2>
+                            <p class="text-gray-600 mb-4">A parboiled marvel, the 1121 Golden Sella is celebrated for its exceptional grain length (avg. 8.35mm), which doubles upon cooking without sticking. Its golden hue and nutty flavor make it the king of biryanis and elaborate rice dishes.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">Technical Specifications:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Moisture: 12-13%</li>
+                                        <li>Broken: < 1%</li>
+                                        <li>Purity: 95%</li>
+                                        <li>Avg. Grain Length: 8.35 mm</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">Packaging Solutions:</h4>
+                                    <p class="text-gray-600">Available in branded non-woven & PP bags: 1kg, 5kg, 10kg, 25kg, 50kg.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-item bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/3">
+                            <img src="https://placehold.co/400x400/F5F5F5/333333?text=Pusa+Steam+in+Packaging" alt="Pusa Steam Basmati Rice" class="w-full h-auto rounded-lg">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-3">Pusa Steam Basmati</h2>
+                            <p class="text-gray-600 mb-4">Processed through a unique steaming technique, this variety retains more nutrients. It cooks into long, slender, and fluffy grains with a delicate aroma, making it a versatile choice for a wide range of international cuisines.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">Technical Specifications:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Moisture: 12-13%</li>
+                                        <li>Broken: < 2%</li>
+                                        <li>Purity: 94%</li>
+                                        <li>Avg. Grain Length: 7.45 mm</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">Packaging Solutions:</h4>
+                                    <p class="text-gray-600">Available in branded non-woven & PP bags: 1kg, 5kg, 10kg, 25kg, 50kg.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Add more products as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Assurance Page -->
+        <section id="quality" class="page py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold text-center mb-4 font-serif">Our Commitment to Excellence</h1>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Quality is not just a standard at Myra Global; it's our identity. We implement stringent quality control measures at every step, from the paddy fields to the final port of delivery, ensuring that every grain is perfect.</p>
+
+                <!-- The Journey of a Grain -->
+                <h2 class="text-3xl font-bold text-center mb-10 text-gold">The Journey of a Grain: Farm-to-Port</h2>
+                <div class="relative">
+                    <!-- The line -->
+                    <!-- <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-300 transform -translate-y-1/2"></div> -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                        <div class="quality-step text-center p-4">
+                            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-gold text-white rounded-full text-2xl font-bold border-4 border-white shadow-lg mb-4">1</div>
+                            <h3 class="font-bold">Paddy Selection</h3>
+                            <p class="text-sm text-gray-500">Sourcing from trusted farmers in prime Basmati regions.</p>
+                        </div>
+                         <div class="quality-step text-center p-4">
+                            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-gold text-white rounded-full text-2xl font-bold border-4 border-white shadow-lg mb-4">2</div>
+                            <h3 class="font-bold">Milling & Processing</h3>
+                            <p class="text-sm text-gray-500">State-of-the-art facilities for gentle and precise milling.</p>
+                        </div>
+                         <div class="quality-step text-center p-4">
+                            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-gold text-white rounded-full text-2xl font-bold border-4 border-white shadow-lg mb-4">3</div>
+                            <h3 class="font-bold">Quality Checks</h3>
+                            <p class="text-sm text-gray-500">Multi-stage lab testing for purity, length, and aroma.</p>
+                        </div>
+                         <div class="quality-step text-center p-4">
+                            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-gold text-white rounded-full text-2xl font-bold border-4 border-white shadow-lg mb-4">4</div>
+                            <h3 class="font-bold">Packaging</h3>
+                            <p class="text-sm text-gray-500">Automated, hygienic packaging to preserve freshness.</p>
+                        </div>
+                         <div class="quality-step text-center p-4">
+                            <div class="flex items-center justify-center w-20 h-20 mx-auto bg-gold text-white rounded-full text-2xl font-bold border-4 border-white shadow-lg mb-4">5</div>
+                            <h3 class="font-bold">Export Logistics</h3>
+                            <p class="text-sm text-gray-500">Efficient and safe dispatch to global destinations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Certifications -->
+                 <div class="mt-20">
+                    <h2 class="text-3xl font-bold text-center mb-10">Our Certifications</h2>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                         <img src="https://placehold.co/150x80/EEEEEE/777777?text=ISO+Logo" alt="ISO Certification" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                         <img src="https://placehold.co/150x80/EEEEEE/777777?text=HACCP+Logo" alt="HACCP Certification" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                         <img src="https://placehold.co/150x80/EEEEEE/777777?text=FSSAI+Logo" alt="FSSAI Certification" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                         <img src="https://placehold.co/150x80/EEEEEE/777777?text=APEDA+Logo" alt="APEDA Certification" class="h-16 grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold text-center mb-4 font-serif">Get in Touch</h1>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We welcome inquiries from international importers, distributors, and buyers. Contact us for a quote or to learn more about our premium Basmati rice.</p>
+                <div class="flex flex-col lg:flex-row bg-white p-8 rounded-lg shadow-2xl">
+                    <!-- Form -->
+                    <div class="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
+                        <h2 class="text-2xl font-bold mb-6">Bulk Order Inquiry</h2>
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold" required>
+                                <input type="text" placeholder="Company Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold" required>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <input type="text" placeholder="Country" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold" required>
+                                <input type="email" placeholder="Email Address" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold" required>
+                            </div>
+                             <div class="mb-4">
+                                 <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                                     <option>Rice Variety of Interest</option>
+                                     <option>1121 Golden Sella Basmati</option>
+                                     <option>Pusa Steam Basmati</option>
+                                     <option>Traditional Raw Basmati</option>
+                                     <option>Other</option>
+                                 </select>
+                             </div>
+                            <div class="mb-4">
+                                <input type="text" placeholder="Quantity (in Metric Tons)" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea placeholder="Your Message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+                            </div>
+                            <button type="submit" class="w-full cta-btn bg-gold text-charcoal font-bold py-3 px-8 rounded-lg hover:bg-yellow-500">Send Inquiry</button>
+                            <p id="form-status" class="text-center mt-4"></p>
+                        </form>
+                    </div>
+                    <!-- Contact Info & Map -->
+                    <div class="lg:w-1/2 lg:pl-12">
+                         <div class="bg-charcoal text-white p-8 rounded-lg h-full flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-gold mb-4">Contact Information</h3>
+                                <div class="space-y-4">
+                                    <p class="flex items-start">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 mt-1 text-gold flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        <span>J-3/111 1st Floor, Right Side J-Extension, Kishankunj, Laxmi Nagar, Delhi - 110092, India</span>
+                                    </p>
+                                    <p class="flex items-center">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-gold flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="mailto:sales@myraglobal.com" class="hover:underline">sales@myraglobal.com</a>
+                                    </p>
+                                    <p class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-gold flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                        <a href="tel:+911234567890" class="hover:underline">+91-12345 67890</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-8 rounded-lg overflow-hidden">
+                                <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.213190848805!2d77.2809983150823!3d28.62338998242111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce35483472097%3A0x6b1587a8f3d6c141!2sKishan%20Kunj%2C%20Laxmi%20Nagar%2C%20New%20Delhi%2C%20Delhi%20110092%2C%20India!5e0!3m2!1sen!2sus!4v1660856149428!5m2!1sen!2sus" 
+                                width="100%" 
+                                height="250" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Myra Global. All Rights Reserved.</p>
+                <div class="flex mt-4 md:mt-0 space-x-6">
+                    <a href="#home" class="hover:text-gold" onclick="showPage('home')">Home</a>
+                    <a href="#about" class="hover:text-gold" onclick="showPage('about')">About Us</a>
+                    <a href="#products" class="hover:text-gold" onclick="showPage('products')">Products</a>
+                    <a href="#contact" class="hover:text-gold" onclick="showPage('contact')">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Page Navigation Logic ---
+        function showPage(pageId, navElement) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show the target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active state in navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if(navElement){
+              navElement.classList.add('active');
+            } else {
+              // If called without a nav element (e.g. from a button), find the corresponding nav link
+              const correspondingLink = document.querySelector(`.nav-link[href="#${pageId}"]`);
+              if(correspondingLink) {
+                correspondingLink.classList.add('active');
+              }
+            }
+            
+            setTimeout(()=>{
+                // Scroll to the top of the page
+                window.scrollTo(0, 0);
+            });
+        }
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+
+        // --- Contact Form Submission Logic ---
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formStatus.textContent = 'Sending...';
+            formStatus.classList.remove('text-red-500');
+            formStatus.classList.add('text-green-500');
+
+            // Simulate a network request
+            setTimeout(() => {
+                formStatus.textContent = 'Thank you for your inquiry! We will be in touch shortly.';
+                contactForm.reset();
+                setTimeout(() => {
+                    formStatus.textContent = '';
+                }, 5000);
+            }, 1000);
+        });
+
+        // --- Handle initial page load from hash ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const correspondingLink = document.querySelector(`.nav-link[href="#${hash}"]`);
+                showPage(hash, correspondingLink);
+            } else {
+                showPage('home', document.querySelector('.nav-link[href="#home"]'));
+            }
+        });
+
+    </script>
+</body>
+</html>
